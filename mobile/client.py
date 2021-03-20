@@ -9,7 +9,7 @@ import os
 ALPHA_NAME = "olek"
 APLHA_IP = "192.168.18.66"
 
-COMBINATIONS = 100
+COMBINATIONS = 1000
 
 MY_TIME = str(time.ctime()).replace(' ', '-')
 
@@ -22,7 +22,7 @@ def create_file():
 def add_position_info():
     for x in range(0,COMBINATIONS):
         try:
-            i = rand.randint(1,4)
+            i = rand.randint(1,8)
             add_rand = 'echo \"' + str(i) + '\" >> files/' + MY_TIME 
             os.system(add_rand)
         except :

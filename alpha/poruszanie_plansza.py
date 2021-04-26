@@ -37,7 +37,7 @@ def board(Table):
                 plansza[y][x] = 0
                 y = y+1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
 
         if ruch == 5: #dol
@@ -49,7 +49,7 @@ def board(Table):
                 plansza[y][x] = 0
                 y = y - 1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
 
         if ruch == 3: #prawo
@@ -61,7 +61,7 @@ def board(Table):
                 plansza[y][x] = 0
                 x = x - 1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
 
         if ruch == 7: #lewo
@@ -73,7 +73,7 @@ def board(Table):
                 plansza[y][x] = 0
                 x = x+1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
 
 
@@ -96,7 +96,7 @@ def board(Table):
                 plansza[y][x] = 0
                 x = x + 1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
 
 
@@ -119,7 +119,7 @@ def board(Table):
                 plansza[y][x] = 0
                 x = x - 1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
 
         if ruch == 4: #dol-prawo
@@ -141,7 +141,7 @@ def board(Table):
                 plansza[y][x] = 0
                 x = x + 1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
 
         if ruch == 6: #dol-lewo
@@ -163,7 +163,7 @@ def board(Table):
                 plansza[y][x] = 0
                 x = x - 1
                 plansza[y][x] = 1
-            print(f'{x}{y}')
+            # print(f'{x}{y}')
             my_db.append(f'{x}{y}')
     return my_db
 

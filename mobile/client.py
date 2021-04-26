@@ -15,7 +15,7 @@ MY_TIME = str(time.ctime()).replace(' ', '-')
 
 def create_file():
     # zmienić num na liczbę przeporowadzonych operacji
-    open_line = 'listening;num;' + MY_TIME
+    open_line = MY_TIME
     create_file = 'echo \"' + open_line + '\" >> files/' + MY_TIME
     os.system(create_file)
 

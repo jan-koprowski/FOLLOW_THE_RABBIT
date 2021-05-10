@@ -51,4 +51,4 @@ def save_result_to_db(steps):
     pass
 
 #fajna funkcja co nie
-message(iterating_comparison(down_from_db(), generate_random_loc()))
+message(iterating_comparison(down_from_db(), rabbit_loc()))

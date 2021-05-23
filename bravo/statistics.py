@@ -5,6 +5,7 @@ from firebase_admin import db, credentials
 import firebase_admin
 import json
 
+
 firebase = firebase.FirebaseApplication("https://wso-projekt-default-rtdb.firebaseio.com/%22", None)
 
 cred_obj = credentials.Certificate("serviceAccountKey.json")
@@ -20,22 +21,37 @@ def download_data():
     dict_values = json.loads(json.dumps(get_record)).values()
     return list(dict_values)
 
+
+
+
 def print_diagram(*data):
     x = np.linspace(0, len(data), num = len(data))
+    data2 = (int(sum(data)/len(data)))
+    lista = [data2] * len(data)
 
+    print(int(np.std(data)))
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
                 x = x,
                 y = data,
                 mode="lines",
-                name = "Liczba kroków = f(próby)"
+                name = "Liczba kroków = f(próby)",
                 ))
+    fig.add_trace(go.Scatter(
+                x = x,
+                y = lista,
+                mode="lines",
+                name = "Średnia"
+                ))
+
+
 
     fig.update_layout(
     title="Po ilu krokach złapano króliczka?",
     xaxis_title="Próba",
     yaxis_title="Liczba kroków",
-    legend_title="Liczba kroków = f(próby)"
+    legend_title="Legenda"
     )
 
     fig.show()

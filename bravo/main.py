@@ -21,7 +21,7 @@ def down_from_db():
     key_to_str = "".join(to_dict.keys())
     #pobranie samych ruchow z dict
     moves = to_dict[key_to_str]["Ruchy"]
-    print(moves)
+    # print(moves)
     return moves
 
 
@@ -46,9 +46,16 @@ def iterating_comparison(moves, location):
 def message(steps):
     print(f"Wykonano {steps} ruchow!")
 
+def json_message(steps):
+    return int(steps)
+
+def send_message_to_db(data):
+    return firebase.post('/wso-projekt-default-rtdb/Cel', json_message(data))
+
 #baza danych z liczba prob i iloscia potrzebnych ruchow do osiagniecia celu
 def save_result_to_db(steps):
     pass
 
 #fajna funkcja co nie
 message(iterating_comparison(down_from_db(), rabbit_loc()))
+send_message_to_db(iterating_comparison(down_from_db(), rabbit_loc()))

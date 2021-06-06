@@ -14,4 +14,5 @@ python read_file.py $LATEST
 
 # Skrypt do monitorowania zmiany w folderze - wersja macos:
 # fswatch -o /Users/olek/Documents/follow-the-rabbit/alpha/files | xargs -n1 -I{} /Users/olek/Documents/follow-the-rabbit/alpha/observer.sh
-# Odpowiednikiem linuxowym jest inotifywait
+# Dla linuxa
+# fswatch -o /home/olek/alpha/files | xargs -n1 -I{} /home/olek/alpha/observer.sh

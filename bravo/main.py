@@ -3,6 +3,7 @@ from firebase import firebase
 from firebase_admin import db, credentials
 import json
 import random
+from time import sleep
 firebase = firebase.FirebaseApplication("https://wso-projekt-default-rtdb.firebaseio.com/%22", None)
 
 cred_obj = credentials.Certificate("serviceAccountKey.json")
@@ -52,10 +53,32 @@ def json_message(steps):
 def send_message_to_db(data):
     return firebase.post('/wso-projekt-default-rtdb/Cel', json_message(data))
 
+
 #baza danych z liczba prob i iloscia potrzebnych ruchow do osiagniecia celu
 def save_result_to_db(steps):
     pass
 
+
+
+fake_db = []
 #fajna funkcja co nie
-message(iterating_comparison(down_from_db(), rabbit_loc()))
-send_message_to_db(iterating_comparison(down_from_db(), rabbit_loc()))
+while True:
+    if not fake_db:
+        print(fake_db)
+        print('Start')
+        fake_db.append(int(iterating_comparison(down_from_db(), rabbit_loc())))
+    if int(iterating_comparison(down_from_db(), rabbit_loc())) == fake_db[-1]:
+        pass
+    else:
+        message(iterating_comparison(down_from_db(), rabbit_loc()))
+        send_message_to_db(iterating_comparison(down_from_db(), rabbit_loc()))
+        fake_db.append(int(iterating_comparison(down_from_db(), rabbit_loc())))
+        print(fake_db)
+    sleep(30)
+
+
+
+
+
+# message(iterating_comparison(down_from_db(), rabbit_loc()))
+# send_message_to_db(iterating_comparison(down_from_db(), rabbit_loc()))

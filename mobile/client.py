@@ -33,7 +33,7 @@ def connect():
     create_file()
     add_position_info()
     # pamietać na urządzeniu mobilnym o zmianie ściezek dostepowych (by ja sprawdzic - pwd)
-    my_cmd = 'scp /Users/olek/Documents/follow-the-rabbit/mobile/files/'+ MY_TIME +' '+ ALPHA_NAME +'@'+ APLHA_IP +':/home/olek/Alpha/files'
+    my_cmd = 'scp /Users/olek/Documents/follow-the-rabbit/mobile/files/'+ MY_TIME +' '+ ALPHA_NAME +'@'+ APLHA_IP +':/home/olek/alpha/files'
     os.system(my_cmd)
 
 connect()

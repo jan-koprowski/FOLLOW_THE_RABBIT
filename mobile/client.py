@@ -14,7 +14,6 @@ COMBINATIONS = 1000
 MY_TIME = str(time.ctime()).replace(' ', '-')
 
 def create_file():
-    # zmienić num na liczbę przeporowadzonych operacji
     open_line = MY_TIME
     create_file = 'echo \"' + open_line + '\" >> files/' + MY_TIME
     os.system(create_file)
@@ -32,7 +31,6 @@ def add_position_info():
 def connect():
     create_file()
     add_position_info()
-    # pamietać na urządzeniu mobilnym o zmianie ściezek dostepowych (by ja sprawdzic - pwd)
     my_cmd = 'scp /Users/olek/Documents/follow-the-rabbit/mobile/files/'+ MY_TIME +' '+ ALPHA_NAME +'@'+ APLHA_IP +':/home/olek/alpha/files'
     os.system(my_cmd)
 
